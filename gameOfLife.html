@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="header" class="fixed-top w-100 d-flex justify-content-end align-items-center"><a href="index.html">
+            <div class="homeBtn"><i class="bi bi-house"></i></div>
+        </a></div>
+    <div class="gbContainer container-fluid">
+        <div class="row justify-content-center">
+            <div id="gameBoy" class="col-12 col-lg-6 align-self-start">
+                <div id="gameBoyBody" class="container-fluid">
+                    <div class="gbTop row w-100"></div>
+                    <div class="gbScreen row w-100 d-flex justify-content-center">
+                        <div class="scnBody d-flex justify-content-center align-items-end">
+                            <div id="scnCanvas" class="position-relative">
+                                <div id="canvasGlass" class="position-absolute top-0 left-0"></div>
+                                <div id="canvas" class=""></div>
+                            </div>
+                        </div>
+                        <div class="scnFooter d-flex justify-content-center align-items-center">
+                            GAME BOY&#160<span style="color:rgb(136, 35, 35)">F</span><span
+                                style="color:rgb(111, 85, 127)">R</span><span
+                                style="color:rgb(36, 116, 87)">E</span><span
+                                style="color:rgb(146, 115, 36)">D</span><span style="color:rgb(38, 67, 123)">Y</span>
+                        </div>
+                    </div>
+                    <div class="gbBtn row w-100 position-relative">
+                        <div id="brandIcon" class="position-absolute d-flex justify-content-center">
+                            <div>Fredendo</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="container-fluid gbBtnContainer">
+                                <div class="row justify-content-center">
+                                    <div id="btnUp"
+                                        class="col-4 gameBtn d-flex justify-content-center align-items-center p-0"><i
+                                            class="bi bi-caret-up-fill"></i></div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div id="btnLeft"
+                                        class="col-4 gameBtn d-flex justify-content-center align-items-center p-0"><i
+                                            class="bi bi-caret-left-fill"></i></div>
+                                    <div id="btnMid"
+                                        class="col-4 gameBtn d-flex justify-content-center align-items-center p-0">
+                                        <div class="btnMidRound rounded-circle"></div>
+                                    </div>
+                                    <div id="btnRight"
+                                        class="col-4 gameBtn d-flex justify-content-center align-items-center p-0"><i
+                                            class="bi bi-caret-right-fill"></i></div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div id="btnDown"
+                                        class="col-4 gameBtn d-flex justify-content-center align-items-center p-0"><i
+                                            class="bi bi-caret-down-fill"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="container-fluid gbBtnContainer">
+                                <div class="btnBoxAB row justify-content-between">
+                                    <div id="btnB"
+                                        class="col-4 btnAB d-flex justify-content-center align-items-center rounded-circle p-0 align-self-end">
+                                        B</div>
+                                    <div id="btnA"
+                                        class="col-4 btnAB d-flex justify-content-center align-items-center rounded-circle p-0">
+                                        A</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div id="botBtn" class="container-fluid gbBtnContainer w-100">
+                                <div class="row">
+                                    <div class="col-4 emptySpace"></div>
+                                    <div class="col-4 gbBtnStart d-flex justify-content-around flex-wrap mb-auto">
+                                        <div id="btnClear" class="btnRound"></div>
+                                        <div id="btnStart" class="btnRound"></div>
+                                        <div id="btnCapBox" class="d-flex justify-content-around w-100 mb-auto p-0">
+                                            <div class="btnCaption ">CLEAR</div>
+                                            <div class="btnCaption">START</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 gbSpeaker">
+                                        <div class="speakerDotRowA d-flex justify-content-center">
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                        </div>
+                                        <div class="speakerDotRowA d-flex justify-content-center">
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                        </div>
+                                        <div class="speakerDotRowB d-flex justify-content-center">
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                        </div>
+                                        <div class="speakerDotRowA d-flex justify-content-center">
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                        </div>
+                                        <div class="speakerDotRowB d-flex justify-content-center">
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                        </div>
+                                        <div class="speakerDotRowA d-flex justify-content-center">
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                        </div>
+                                        <div class="speakerDotRowB d-flex justify-content-center">
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                        </div>
+                                        <div class="speakerDotRowB d-flex justify-content-center">
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                            <div class="speakerDot rounded-circle"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gbFooter row w-100">
+
+                    </div>
+                    <div class="gbShadowBox position-relative row justify-content-center">
+                        <div class="gbShadow position-absolute rounded-circle"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="gameOption" class="col-12 col-lg-6">
+                <div id="gameOpt-header">
+                    <h5>Game Boy Simulator</h5>
+                    <h3>訂製你的 <span>Game Boy</span><span class="sup"></span></h3>
+                </div>
+                <div id="baseOpt" class="w-100">
+                    <div id="resOpt" class="optBox">
+                        <h4>顯示器</h4>
+                        <div class="d-flex flex-wrap justify-content-start align-items-center">
+                            <div type="button" id="monA" class="optBtn rounded-pill active" value="2">FHD 顯示器</div>
+                            <div type="button" id="monB" class="optBtn rounded-pill" value="4">標清顯示器</div>
+                            <div type="button" id="monC" class="optBtn rounded-pill" value="6">LQ<span
+                                    class="sup">TM</span>顯示器
+                            </div>
+                        </div>
+                    </div>
+                    <div id="frameOpt" class="optBox mt-4">
+                        <h4 class="mb-0">螢幕更新率</h4>
+                        <div class="d-flex flex-wrap">
+                            <label id="rangeLabel" for="frameRange" class="form-label">左右滑動選擇更新率</label>
+                            <div class="rangeBar d-flex w-100 justify-content-between align-items-center rounded-pill">
+                                <span class="rangeCap pe-3">5Hz</span>
+                                <input type="range" min="5" max="60" value="20" step="5" id="frameRange">
+                                <span class="rangeCap ps-3">60Hz</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="colorOpt" class="optBox mt-4">
+                        <h4 class="mb-1">機體顏色</h4>
+                        <div id="themeOptBox"
+                            class="d-flex flex-wrap justify-content-start align-items-center align-content-center">
+                            <div class="themeBtnSet">
+                                <div type="button" id="themeA"
+                                    class="colorBtn rounded-circle d-flex flex-wrap align-items-center"
+                                    value="themeYellow">
+                                    <div class="colorBar cb-top"></div>
+                                    <div class="colorBar cb-bot"></div>
+                                </div>
+                                <lable class="capTxt">香芒黃</lable>
+                            </div>
+                            <div class="themeBtnSet">
+                                <div type="button" id="themeB"
+                                    class="colorBtn rounded-circle d-flex flex-wrap align-items-center"
+                                    value="themeGreen">
+                                    <div class="colorBar cb-top"></div>
+                                    <div class="colorBar cb-bot"></div>
+                                </div>
+                                <lable class="capTxt">薄荷綠</lable>
+                            </div>
+                            <div class="themeBtnSet">
+                                <div type="button" id="themeC"
+                                    class="colorBtn rounded-circle d-flex flex-wrap align-items-center"
+                                    value="themeBlue">
+                                    <div class="colorBar cb-top"></div>
+                                    <div class="colorBar cb-bot"></div>
+                                </div>
+                                <lable class="capTxt">孔雀藍</lable>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="gameOfLife" class="optBox">
+                    <div id="zipBtn" class="d-flex justify-content-center align-items-end"><i
+                            class="bi bi-caret-up-fill"></i></div>
+                    <div class="container-fluid pt-4">
+                        <h3>Game Of Life</h3>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12 container-fluid">
+                                <div id="drawFn" class="row">
+                                    <h4 class="ls-less col-12">Brush</h4>
+                                    <div class="col-12 d-flex">
+                                        <div class="preview-brush d-flex justify-content-center align-items-center">
+                                            <div class="brushDot"></div>
+                                        </div>
+                                        <div id="drawBtn" class="drawToggle rounded active" value="1" type="button">
+                                            <i class="bi bi-pencil pe-0"></i>
+                                        </div>
+                                        <div id="eraseBtn" class="drawToggle rounded" value="0" type="button">
+                                            <i class="bi bi-eraser pe-0"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-10">
+                                        <label id="brushSizeLabel" for="brushRange"
+                                            class="form-label"><sub>Size</sub></label><br>
+                                        <input id="brushSize" class="w-100" type="range" min="2" max="10" value="4"
+                                            step="2">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div id="patternFn" class="row">
+                                    <h4 class="ls-less col-12">Pattern</h4>
+                                    <div class="col-3">
+                                        <div class="ptnPreview d-flex justify-content-center align-content-center">
+                                            <img class="previewImg" src="Image/beetles.png">
+                                        </div>
+                                    </div>
+                                    <div class="col-9 d-flex align-items-center">
+                                        <p class="ruleInfo ps-4 mb-0">Use&#160<i
+                                                class="bi bi-caret-left-fill"></i>&#160key&#160<i
+                                                class="bi bi-caret-right-fill"></i>&#160to switch patterns<br>
+                                            And press&#160<span class="fontKey">[A]</span>&#160to print pattern.</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div id="colorFn" class="row">
+                                    <h4 class="ls-less col-12">Color</h4>
+                                    <div class="col-12">
+                                        <div class="colColumn d-flex justify-content-around">
+                                            <div class="colBox colBox-1"></div>
+                                            <div class="colBox colBox-2"></div>
+                                            <div class="colBox colBox-3"></div>
+                                            <div class="colBox colBox-4"></div>
+                                            <div class="colBox colBox-5"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-between pt-1">
+                                        <div class="switchColorL" type="button"><i class="bi bi-caret-left-fill"></i>
+                                        </div>
+                                        <span class="txtColor">Mono</span>
+                                        <div class="switchColorR" type="button"><i class="bi bi-caret-right-fill"></i>
+                                        </div>
+                                    </div>
+                                    <div class="quickNote pt-5">Quick
+                                        Notes:<br>(C):Clear<br>(S):Start<br>(Left/Right):Switch Pattern<br>(A):Print
+                                        Pattern<br>(D):Dark Mode
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+        <script type='text/javascript' src="patternData.js"></script>
+        <script type='text/javascript' src="script.js"></script>
+</body>
+
+</html>
